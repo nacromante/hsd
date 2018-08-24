@@ -6,4 +6,4 @@ spring:
     config: 
       server: 
         git: 
-          uri: C:\Users\frederico.queiroz\Documents\workspace\ServicosHsdLabs
+          uri: https://github.com/nacromante/hsd/ServicosHsdLabs
