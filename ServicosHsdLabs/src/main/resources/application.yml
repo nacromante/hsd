@@ -6,4 +6,4 @@ spring:
     config: 
       server: 
         git: 
-          uri: https://github.com/nacromante/hsd/ServicosHsdLabs
+          uri: https://github.com/nacromante/hsd-configs
