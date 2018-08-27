@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: AuthServer
+  datasource:
+    data: classpath:/sql/data.sql
+    driver-class-name: org.h2.Driver
+    password:
+    platform: h2
+    schema: classpath:/sql/schema.sql
+    url: jdbc:h2:mem:AZ;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    generate-ddl: false
+    hibernate: 
+      ddl-auto: none
+    show-sql: true
+    
+server:
+  port: 9092
+
+eureka:
+  instance:
+    hostname: localhost
+    port: 8761
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+  server:
+    wait-time-in-ms-when-sync-empty: 3000
+    
+security:
+  oauth2:
+    client:
+      access-token-validity-seconds: 1800
+      authorized-grant-types: password, refresh_token
+      client-id: AuthServer
+      client-secret: $2a$10$p9Pk0fQNAQSesI4vuvKA0OZanDD2
+      resource-ids: resources
+      scope: read, write
+
+ 
